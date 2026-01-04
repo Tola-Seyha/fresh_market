@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_market/pages/cart_page.dart';
 import 'package:fresh_market/pages/intro_page.dart';
 
 void main() {
