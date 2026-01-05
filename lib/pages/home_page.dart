@@ -93,6 +93,11 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () => Navigator.pop(context),
                 child: Text("Back to Intro"),
               ),
+              OutlinedButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text("Back to Intro"),
+              ),
+
             ],
           ),
         ),
