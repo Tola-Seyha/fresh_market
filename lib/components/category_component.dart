@@ -5,15 +5,20 @@ class CatecoryComponent extends StatelessWidget {
   const CatecoryComponent({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Container( 
-        height: 220,
-        // width: 100,
-        color: Colors.green,
-        child: Text(title),
-      
-      
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 4),
+        child: Center(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            height: 40,
+            width: 100,
+            child: Center(child: Text(title, style: TextStyle(fontSize: 16))),
+          ),
+        ),
       ),
     );
   }

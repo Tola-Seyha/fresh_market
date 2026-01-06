@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fresh_market/components/category_component.dart';
+import 'package:fresh_market/models/category_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,11 +16,19 @@ List<String> imagesSlider = [
   "assets/image/meats.png",
 ];
 
+List<CategoryModel> categoryModel = [
+  CategoryModel(title: "All"),
+  CategoryModel(title: "Fruit"),
+  CategoryModel(title: "Vegetable"),
+  CategoryModel(title: "Meat"),
+];
+
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Home")),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -87,16 +96,34 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 10),
 
               // fresh items grid view
-             
-              // just a sameple back button to intro page
-              OutlinedButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text("Back to Intro"),
+              // Container(
+              //   height: 100,
+              //   color: Colors.amber,
+              //   child: ListView.builder(
+              //     // scrollDirection: Axis.horizontal,
+              //     itemCount: categoryModel.length,
+              //     itemBuilder: (context, index) {
+              //       return CatecoryComponent(title: categoryModel[index].title);
+              //     },
+              //   ),
+              // ),
+
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 14),
+                child: Container(
+                  height: 80,   
+                  // color: Colors.amber,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: categoryModel.length,
+                    itemBuilder: (context, index) {
+                      return CatecoryComponent(title: categoryModel[index].title);
+                    },
+                  ),
+                ),
               ),
-              OutlinedButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text("Back to Intro"),
-              ),
+              
+
 
             ],
           ),
