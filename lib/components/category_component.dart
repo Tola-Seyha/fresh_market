@@ -11,12 +11,16 @@ class CatecoryComponent extends StatelessWidget {
         child: Center(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.amber,
+              border: Border.all(), 
+              color: Colors.grey[200],  
               borderRadius: BorderRadius.circular(20),
             ),
-            height: 40,
-            width: 100,
-            child: Center(child: Text(title, style: TextStyle(fontSize: 16))),
+            height: 35,
+             // width: 100,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),  
+              child: Center(child: Text(title, style: TextStyle(fontSize: 16))),
+            ),
           ),
         ),
       ),
